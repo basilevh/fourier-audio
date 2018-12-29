@@ -1,0 +1,7 @@
+.vs/*
+obj/*
+bin/*
+!bin/Release
+!bin/Release/
+bin/Release/*
+!bin/Release/FourierAudio.exe
