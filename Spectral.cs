@@ -2,7 +2,7 @@
 
 using System;
 
-namespace FourierSong
+namespace FourierAudio
 {
     public class Spectral
     {

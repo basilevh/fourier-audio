@@ -1,4 +1,4 @@
-﻿namespace FourierSong
+﻿namespace FourierAudio
 {
     partial class frmMain
     {
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pic = new System.Windows.Forms.PictureBox();
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblLeft = new System.Windows.Forms.Label();
             this.lblRight = new System.Windows.Forms.Label();
@@ -45,23 +44,11 @@
             this.lblSpectN = new System.Windows.Forms.Label();
             this.lblSamStep = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScrollBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScroll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbrSpectN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbrSamStep)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pic
-            // 
-            this.pic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic.Location = new System.Drawing.Point(0, 0);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(1086, 643);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic.TabIndex = 0;
-            this.pic.TabStop = false;
-            this.pic.DoubleClick += new System.EventHandler(this.pic_DoubleClick);
             // 
             // lblInfo
             // 
@@ -173,7 +160,7 @@
             this.btnPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Location = new System.Drawing.Point(220, 12);
+            this.btnPlay.Location = new System.Drawing.Point(240, 12);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(75, 32);
             this.btnPlay.TabIndex = 9;
@@ -231,11 +218,11 @@
             this.btnOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
             this.btnOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(208)))), ((int)(((byte)(224)))));
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpen.Location = new System.Drawing.Point(130, 12);
+            this.btnOpen.Location = new System.Drawing.Point(150, 12);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 32);
             this.btnOpen.TabIndex = 13;
-            this.btnOpen.Text = "&Open";
+            this.btnOpen.Text = "&Open...";
             this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
@@ -258,14 +245,12 @@
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lblRight);
             this.Controls.Add(this.lblLeft);
-            this.Controls.Add(this.pic);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.Text = "Fourier Song";
             this.SizeChanged += new System.EventHandler(this.FrmMain_SizeChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScrollBG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScroll)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbrSpectN)).EndInit();
@@ -276,8 +261,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblLeft;
         private System.Windows.Forms.Label lblRight;
