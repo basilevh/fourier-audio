@@ -49,7 +49,7 @@ namespace FourierAudio
 
         public new void Update()
         {
-            drawer.Draw(graphics, Width, Height, centerIndex, scaleFact, playing, chkSpectrum.Checked, tbrSpectN.Value, tbrSamStep.Value);
+            // drawer.Draw(graphics, Width, Height, centerIndex, scaleFact, playing, chkSpectrum.Checked, tbrSpectN.Value, tbrSamStep.Value);
             pictureBox.Refresh();
             base.Update();
         }

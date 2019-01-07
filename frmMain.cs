@@ -102,11 +102,11 @@ namespace FourierAudio
         {
             // picScroll.Left = picScrollBG.Left + Math.Min(Math.Max(mouseX - picScroll.Width / 2, 0), picScrollBG.Width - picScroll.Width);
             // startIndex = data.NumSamples * (picScroll.Left - picScrollBG.Left) / picScrollBG.Width;
-            picScroll.Width = (int)(picScrollBG.Width * (display.Width * scaleFact) / file.NumSamples);
+            /*picScroll.Width = (int)(picScrollBG.Width * (display.Width * scaleFact) / file.NumSamples);
             picScroll.Left = (int)(picScrollBG.Left + (double)centerIndex * picScrollBG.Width / file.NumSamples - picScroll.Width / 2);
             picScrollBG.Refresh();
             lblSample.Text = "Sample: " + centerIndex + " / " + file.NumSamples;
-            lblSample.Refresh();
+            lblSample.Refresh();*/
         }
 
         private void FrmMain_SizeChanged(object sender, EventArgs e)
@@ -167,41 +167,41 @@ namespace FourierAudio
         {
             if (file == null || mouseX == lastMouseX)
                 return;
-            centerIndex = (int)(file.NumSamples * (double)(mouseX) / picScrollBG.Width);
-            if (!playing)
+            // centerIndex = (int)(file.NumSamples * (double)(mouseX) / picScrollBG.Width);
+            if (player.State == MySoundPlayer.PlayerState.Stopped)
                 updateAll();
             mouseX = lastMouseX;
         }
 
         private void FrmMain_MouseWheel(object sender, MouseEventArgs e)
         {
-            if ((ModifierKeys & Keys.Control) == Keys.Control)
+            /*if ((ModifierKeys & Keys.Control) == Keys.Control)
                 scaleFact = Math.Max(scaleFact * Math.Exp(-e.Delta / 500.0), 0.5);
             else
-                centerIndex -= (int)(e.Delta / 4.0 * scaleFact);
-            if (!playing)
+                centerIndex -= (int)(e.Delta / 4.0 * scaleFact);*/
+            if (player.State == MySoundPlayer.PlayerState.Stopped)
                 updateAll();
             // lblSample.Text = "Delta: " + e.Delta + ", scaleFact: " + scaleFact;
         }
 
         private void tmrPlayScroll_Tick(object sender, EventArgs e)
         {
-            double elapsed = (DateTime.Now - playStart).TotalSeconds + 0.05; // correction
-            centerIndex = (int)(elapsed * data.SampleRate % data.NumSamples);
+            /*double elapsed = (DateTime.Now - playStart).TotalSeconds + 0.05; // correction
+            centerIndex = (int)(elapsed * data.SampleRate % data.NumSamples);*/
             updateAll();
         }
 
         private void tbrSpectN_Scroll(object sender, EventArgs e)
         {
             lblSpectN.Text = "N = " + tbrSpectN.Value;
-            if (!playing)
+            if (player.State == MySoundPlayer.PlayerState.Stopped)
                 updateAll();
         }
 
         private void tbrSamStep_Scroll(object sender, EventArgs e)
         {
             lblSamStep.Text = "Step = " + tbrSamStep.Value;
-            if (!playing)
+            if (player.State == MySoundPlayer.PlayerState.Stopped)
                 updateAll();
         }
     }

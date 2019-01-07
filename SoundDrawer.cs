@@ -57,15 +57,15 @@ namespace FourierAudio
                     if (index >= 0 && index < file.NumSamples)
                         sampled[i] = (file.Samples[0, index] + 32768.0) / 65535.0;
                 }
-                double[] dft = new Spectral(sampled).GetFreqComps(N); // real_freq [Hz] = (index / N) * (sample_rate / sample_step)
+                FrequencyComponent[] freqComps = FFT.CalculateFrequencyComps(sampled, sampleStep / file.SampleRate);
 
                 // Ignore first one (= constant coefficient, frequency 0)
                 for (int i = 1; i < N / 2; i++)
                 {
                     float x = display.Width / 2 + 8 * (i - N / 4);
-                    double green = Math.Min(Math.Max(dft[i] * 64, 0), 255);
+                    double green = Math.Min(Math.Max(freqComps[i].Magnitude * 64, 0), 255);
                     Pen pen = new Pen(Color.FromArgb(0, (int)green, 255), 5);
-                    graphics.DrawLine(pen, x, display.Height, x, (float)(display.Height - dft[i] * 64));
+                    graphics.DrawLine(pen, x, display.Height, x, (float)(display.Height - freqComps[i].Magnitude * 64));
                 }
             }
 
