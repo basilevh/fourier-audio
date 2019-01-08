@@ -12,8 +12,6 @@ To-do:
 
 * Improve OOP.
 
-* Use FFT rather than DFT.
-
 * Support multiple sliding windows (current is rectangular) as to visualize their convolutional effect on the spectrum.
 
 * Perhaps allow for some auditive interaction in the form of spectrum modification / equalization.
