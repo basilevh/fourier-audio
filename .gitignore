@@ -5,3 +5,5 @@ bin/*
 !bin/Release/
 bin/Release/*
 !bin/Release/FourierAudio.exe
+FourierAudioTests1/bin/*
+FourierAudioTests1/obj/*

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourierAudio", "FourierAudio.csproj", "{3835981D-759A-4B23-AAC5-D0EFE6D50476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourierAudioTests1", "..\FourierAudioTests1\FourierAudioTests1.csproj", "{E4A79713-C261-4575-9394-E209749A7BD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourierAudioTests1", "FourierAudioTests1\FourierAudioTests1.csproj", "{E4A79713-C261-4575-9394-E209749A7BD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
